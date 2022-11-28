@@ -51,6 +51,10 @@ export default Vue.extend({
     tooltip: {
       type: String,
       default: ''
+    },
+    inputtype: {
+      type: String,
+      default: 'text'
     }
   },
   data: function () {

@@ -8,7 +8,7 @@
           :placeholder="'Settings password'"
           :show-action-button="false"
           :show-label="true"
-          :password="true"
+          :inputtype="'password'"
           :value="currentSettingsPassword"
           @input="handleSettingsPasswordInput"
         />

@@ -30,6 +30,13 @@ export default Vue.extend({
     },
 
   },
+  mounted: function () {
+    this.setCurrentSettingsPassword("")
+  },
+  beforeDestroy: function () {
+    this.setCurrentSettingsPassword("")
+  },
+
   methods: {
     handleSettingsPasswordInput: function (input) {
       this.setCurrentSettingsPassword(input)
