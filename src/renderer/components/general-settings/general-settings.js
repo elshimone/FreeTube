@@ -188,7 +188,6 @@ export default Vue.extend({
       const instance = input.replace(/\/$/, '')
       this.setCurrentInvidiousInstanceBounce(instance)
     },
-
     handleSetDefaultInstanceClick: function () {
       const instance = this.currentInvidiousInstance
       this.updateDefaultInvidiousInstance(instance)
@@ -211,7 +210,7 @@ export default Vue.extend({
     },
 
     ...mapMutations([
-      'setCurrentInvidiousInstance'
+      'setCurrentInvidiousInstance',
     ]),
 
     ...mapActions([

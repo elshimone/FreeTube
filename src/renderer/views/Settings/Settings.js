@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import PasswordSettings from '../../components/password-settings/password-settings.vue'
 import GeneralSettings from '../../components/general-settings/general-settings.vue'
 import ThemeSettings from '../../components/theme-settings/theme-settings.vue'
 import PlayerSettings from '../../components/player-settings/player-settings.vue'
@@ -16,6 +17,7 @@ import ExperimentalSettings from '../../components/experimental-settings/experim
 export default Vue.extend({
   name: 'Settings',
   components: {
+    'password-settings': PasswordSettings,
     'general-settings': GeneralSettings,
     'theme-settings': ThemeSettings,
     'player-settings': PlayerSettings,
@@ -33,6 +35,10 @@ export default Vue.extend({
   computed: {
     usingElectron: function () {
       return process.env.IS_ELECTRON
-    }
+    },
+    showSettings: function () {
+      return this.$store.getters.getCurrentSettingsPassword === 'ch1pottl3'
+    },
+
   }
 })
