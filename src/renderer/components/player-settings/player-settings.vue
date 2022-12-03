@@ -120,7 +120,7 @@
       <ft-slider
         :label="$t('Settings.Player Settings.Max Video Playback Rate')"
         :default-value="maxVideoPlaybackRate"
-        :min-value="2"
+        :min-value="1"
         :max-value="10"
         :step="1"
         value-extension="x"
