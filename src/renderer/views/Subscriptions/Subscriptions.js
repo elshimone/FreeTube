@@ -95,6 +95,9 @@ export default Vue.extend({
 
     fetchSubscriptionsAutomatically: function() {
       return this.$store.getters.getFetchSubscriptionsAutomatically
+    },
+    videoTitleFilter: function() {
+      return this.$store.getters.getVideoTitleFilter
     }
   },
   watch: {

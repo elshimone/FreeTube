@@ -3,7 +3,7 @@
     :grid="listType !== 'list'"
   >
     <ft-list-lazy-wrapper
-      v-for="(result, index) in data"
+      v-for="(result, index) in filteredData"
       :key="index"
       appearance="result"
       :data="result"

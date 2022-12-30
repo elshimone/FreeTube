@@ -170,6 +170,9 @@ export default Vue.extend({
     },
     hideChannelSubscriptions: function () {
       return this.$store.getters.getHideChannelSubscriptions
+    },
+    videoTitleFilter: function() {
+      return this.$store.getters.getVideoTitleFilter
     }
   },
   watch: {

@@ -165,6 +165,7 @@
         <ft-element-list
           v-show="currentTab === 'videos'"
           :data="latestVideos"
+          :filter="videoTitleFilter"
         />
         <ft-flex-box
           v-if="currentTab === 'videos' && latestVideos.length === 0"
@@ -176,6 +177,7 @@
         <ft-element-list
           v-show="currentTab === 'playlists'"
           :data="latestPlaylists"
+          :filter="videoTitleFilter"
         />
         <ft-flex-box
           v-if="currentTab === 'playlists' && latestPlaylists.length === 0"
@@ -187,6 +189,7 @@
         <ft-element-list
           v-show="currentTab === 'search'"
           :data="searchResults"
+          :filter="videoTitleFilter"
         />
         <ft-flex-box
           v-if="currentTab === 'search' && searchResults.length === 0"

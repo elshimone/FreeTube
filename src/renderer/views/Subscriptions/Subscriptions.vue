@@ -50,6 +50,7 @@
       <ft-element-list
         v-else
         :data="activeVideoList"
+        :filter="videoTitleFilter"
       />
       <ft-flex-box>
         <ft-button

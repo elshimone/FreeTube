@@ -25,6 +25,15 @@
           @change="updateHideSearchBar"
         />
       </div>
+      <div class="">
+        <ft-input
+          :placeholder="$t('Settings.Parental Control Settings.Video title filter')"
+          :show-action-button="false"
+          :show-label="true"
+          :value="videoTitleFilter"
+          @input="updateVideoTitleFilter"
+        />
+      </div>
     </div>
   </ft-settings-section>
 </template>

@@ -35,6 +35,7 @@
       <ft-element-list
         v-if="activeData.length > 0 && !isLoading"
         :data="activeData"
+        :filter="videoTitleFilter"
       />
       <ft-flex-box
         v-if="showLoadMoreButton"

@@ -12,11 +12,27 @@ export default Vue.extend({
     data: {
       type: Array,
       required: true
+    },
+    filter: {
+      type: String,
+      required: false
     }
   },
   computed: {
     listType: function () {
       return this.$store.getters.getListType
+    },
+    filteredData: function () {
+      const re = RegExp(this.filter, 'gi')
+      return this.data.filter(r => {
+        if (!this.filter) {
+          return true
+        } else if (!Object.hasOwn(r, 'title')) {
+          return true
+        } else {
+          return !r.title.match(re)
+        }
+      })
     }
   }
 })

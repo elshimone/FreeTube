@@ -31,6 +31,9 @@ export default Vue.extend({
     historyCache: function () {
       return this.$store.getters.getHistoryCache
     },
+    videoTitleFilter: function() {
+      return this.$store.getters.getVideoTitleFilter
+    },
 
     fullData: function () {
       if (this.historyCache.length < this.dataLimit) {
