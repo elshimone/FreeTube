@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { mapActions } from 'vuex'
 import { colors } from '../../helpers/colors'
 import FtSelect from '../ft-select/ft-select.vue'
-
+import { sanitizeForHtmlId } from '../../helpers/accessibility'
 export default Vue.extend({
   name: 'FtSponsorBlockCategory',
   components: {
@@ -34,7 +34,7 @@ export default Vue.extend({
     colorNames: function () {
       return this.colorValues.map(colorVal => {
         // add spaces before capital letters
-        const colorName = colorVal.replace(/([A-Z])/g, ' $1').trim()
+        const colorName = colorVal.replaceAll(/([A-Z])/g, ' $1').trim()
         return this.$t(`Settings.Theme Settings.Main Color Theme.${colorName}`)
       })
     },
@@ -68,6 +68,10 @@ export default Vue.extend({
           break
       }
       return sponsorVal
+    },
+
+    sanitizedId: function() {
+      return sanitizeForHtmlId(this.categoryName)
     },
 
     skipNames: function() {

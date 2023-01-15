@@ -213,6 +213,7 @@ const state = {
   hideWatchedSubs: false,
   hideLabelsSideBar: false,
   hideChapters: false,
+  showDistractionFreeTitles: false,
   landingPage: 'subscriptions',
   listType: 'grid',
   maxVideoPlaybackRate: 3,
@@ -266,6 +267,7 @@ const state = {
   useSponsorBlock: false,
   videoVolumeMouseScroll: false,
   videoPlaybackRateMouseScroll: false,
+  videoSkipMouseScroll: false,
   videoPlaybackRateInterval: 0.25,
   downloadFolderPath: '',
   downloadBehavior: 'download',
@@ -324,9 +326,7 @@ const stateWithSideEffects = {
         }
       }
 
-      if (process.env.NODE_ENV !== 'development' || !process.env.IS_ELECTRON) {
-        await i18n.loadLocale(targetLocale)
-      }
+      await i18n.loadLocale(targetLocale)
 
       i18n.locale = targetLocale
       await dispatch('getRegionData', {
