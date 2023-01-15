@@ -25,6 +25,14 @@
           @change="updateHideSearchBar"
         />
       </div>
+      <div class="switchColumn">
+        <ft-toggle-switch
+          :label="$t('Settings.Parental Control Settings.Hide Featured Videos')"
+          :compact="true"
+          :default-value="hideFeaturedVideos"
+          @change="updateHideFeaturedVideos"
+        />
+      </div>
       <div class="">
         <ft-input
           :placeholder="$t('Settings.Parental Control Settings.Video title filter')"

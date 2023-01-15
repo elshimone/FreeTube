@@ -146,24 +146,26 @@
           v-html="channelDescription"
         />
         <br>
-        <h2
-          v-if="relatedChannels.length > 0"
-        >
-          {{ $t("Channel.About.Featured Channels") }}
-        </h2>
-        <ft-flex-box
-          v-if="relatedChannels.length > 0"
-        >
-          <ft-channel-bubble
-            v-for="(channel, index) in relatedChannels"
-            :key="index"
-            :channel-name="channel.author || channel.channelName"
-            :channel-id="channel.channelId"
-            :channel-thumbnail="channel.authorThumbnails[channel.authorThumbnails.length - 1].url"
-            role="link"
-            @click="goToChannel(channel.channelId)"
-          />
-        </ft-flex-box>
+        <div v-if="!hideFeaturedVideos">
+          <h2
+            v-if="relatedChannels.length > 0"
+          >
+            {{ $t("Channel.About.Featured Channels") }}
+          </h2>
+          <ft-flex-box
+            v-if="relatedChannels.length > 0"
+          >
+            <ft-channel-bubble
+              v-for="(channel, index) in relatedChannels"
+              :key="index"
+              :channel-name="channel.author || channel.channelName"
+              :channel-id="channel.channelId"
+              :channel-thumbnail="channel.authorThumbnails[channel.authorThumbnails.length - 1].url"
+              role="link"
+              @click="goToChannel(channel.channelId)"
+            />
+          </ft-flex-box>
+        </div>
       </div>
       <ft-select
         v-show="currentTab === 'videos'"

@@ -175,7 +175,10 @@ export default Vue.extend({
     },
     videoTitleFilter: function() {
       return this.$store.getters.getVideoTitleFilter
-    }
+    },
+    hideFeaturedVideos: function () {
+      return this.$store.getters.getHideFeaturedVideos
+    },
   },
   watch: {
     $route() {

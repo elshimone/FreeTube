@@ -279,7 +279,8 @@ const state = {
   screenshotFilenamePattern: '%Y%M%D-%H%N%S',
   fetchSubscriptionsAutomatically: true,
   settingsPassword: '',
-  videoTitleFilter: 'hustle'
+  videoTitleFilter: 'hustle',
+  hideFeaturedVideos: false,
 }
 
 const stateWithSideEffects = {

@@ -23,6 +23,9 @@ export default Vue.extend({
     },
     videoTitleFilter: function() {
       return this.$store.getters.getVideoTitleFilter
+    },
+    hideFeaturedVideos: function() {
+      return this.$store.getters.getHideFeaturedVideos
     }
   },
   methods: {
@@ -30,7 +33,8 @@ export default Vue.extend({
       'updateHideSearchBar',
       'updateHideUnsubscribeButton',
       'updateShowFamilyFriendlyOnly',
-      'updateVideoTitleFilter'
+      'updateVideoTitleFilter',
+      'updateHideFeaturedVideos'
     ])
   }
 })
